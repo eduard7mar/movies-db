@@ -5,6 +5,7 @@ export interface Movie {
   title: string;
   overview: string;
   popularity: number;
+  image?: string;
 }
 
 interface MoviesState {
@@ -36,8 +37,28 @@ const initialState: MoviesState = {
   ],
 };
 
-const moviesReducer: Reducer<MoviesState, Action> = (state, action) => {
-  return initialState;
-};
+export const moviesLoaded = (movies: Movie[]) => ({
+  type: "movies/loaded",
+  payload: movies,
+});
+
+interface ActionWithPayload<T> extends Action {
+  payload: T;
+}
+
+const moviesReducer: Reducer<MovieState, ActionWithPayload<Movie[]>> = (state, action) => {
+  const currentState = state ?? initialState;
+
+  switch(action.type) {
+    case "movies/loaded":
+      return {
+        ...currentState,
+        top: action.payload,
+      };
+      default:
+        return currentState;
+  }
+}
+
 
 export default moviesReducer;

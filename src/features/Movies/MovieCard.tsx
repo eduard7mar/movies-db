@@ -6,9 +6,10 @@ interface Props {
   title: string;
   popularity: number;
   overview: string;
+  image?: string;
 }
 
-function MovieCard({ id, title, overview, popularity, image }: Props) {
+function MovieCard({ id, title, overview, popularity, image="/movie-thumb.png" }: Props) {
   return (
     <div className={styles.card}>
       <img
