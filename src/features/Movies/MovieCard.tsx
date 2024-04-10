@@ -8,12 +8,12 @@ interface Props {
   overview: string;
 }
 
-function MovieCard({ id, title, overview, popularity }: Props) {
+function MovieCard({ id, title, overview, popularity, image }: Props) {
   return (
     <div className={styles.card}>
       <img
         className={styles.thumbnail}
-        src="/movie-thumb.png"
+        src={image}
         alt="Movie thumbnail"
       />
       <div className={styles.content}>
