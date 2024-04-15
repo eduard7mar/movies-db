@@ -32,6 +32,12 @@ interface MovieDetails {
   backdrop_path?: string | null;
 }
 
+interface PageDetails<T> {
+  results: T[];
+  page: number;
+  totalPages: number;
+}
+
 interface Configuration {
   images: {
     base_url: string;
@@ -40,7 +46,7 @@ interface Configuration {
 
 interface ITmbdClient {
   getConfiguration: () => Promise<Configuration>;
-  getNowPlaying: () => Promise<MovieDetails[]>;
+  getNowPlaying: (page: number) => Promise<PageDetails<MovieDetails>>;
 }
 
 export const client: ITmbdClient = {
@@ -48,10 +54,12 @@ export const client: ITmbdClient = {
     const response = await get<Configuration>("/configuration");
     return response;
   },
-  getNowPlaying: async () => {
-    const response = await get<PageResponse<MovieDetails>>(
-      "/movie/now_playing"
-    );
-    return response.results;
+  getNowPlaying: async (page: number = 1) => {
+    const response = await get<PageResponse<MovieDetails>>(`/movie/now_playing?page=${page}`);
+    return {
+      results: response.results,
+      totalPages: response.total_pages,
+      page: response.page,
+    };
   },
 };
