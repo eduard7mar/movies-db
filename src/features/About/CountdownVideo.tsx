@@ -25,8 +25,7 @@ export function CountdownVideo() {
           src="https://www.pexels.com/download/video/3843433"
           height="500"
           onPlay={() => setIsPlaying(true)}
-          onPause={() => setIsPlaying(false)}
-        />
+          onPause={() => setIsPlaying(false)} />
       </CardMedia>
       <CardActions>
         <IconButton aria-label="play/pause" onClick={togglePlaying}>
