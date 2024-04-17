@@ -1,46 +1,41 @@
-# Getting Started with Create React App
+# Movies DB
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to Movies DB, a React application that offers a streamlined interface for browsing a vast database of movies. Utilizing the powerful TMDB API, Movies DB provides movie enthusiasts with detailed insights into movie plots, casts, genres, and more, all enriched with an intuitive and elegant user interface. By default, the app displays current movies that are now showing in theatres worldwide, keeping you up-to-date with the latest cinema offerings.
 
-## Available Scripts
+## Technologies Used
 
-In the project directory, you can run:
+- **React**
+- **React Hooks**
+- **TypeScript**
+- **Material-UI**
+- **RTK Query**
+- **React Router**
+- **Auth0**
+- **Leaflet**
 
-### `npm start`
+## Installation
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+To set up the project locally, follow these steps:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+1. **Clone the repository:**
+   ```bash
+   git clone [repository-url]
+   cd movies-db
 
-### `npm test`
+2. **Install dependencies:**
+   ```bash
+   npm install
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+3. **Start the application:**
+   ```bash
+   npm start
 
-### `npm run build`
+4. **This will run the app in development mode. Open http://localhost:3000 to view it in the browser.**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Usage
+Once the application is running, you can:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Explore Movies: Browse the latest and most popular movies.
+- Search and Filter: Use filters or keywords to search for genres of interest.
+- Movie Details: Click on any movie card to view detailed information such as synopsis, rating, release date, and more.
+- User Authentication: Utilize the Auth0 integration to create an account or log in to access personalized features (still in development).
