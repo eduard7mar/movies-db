@@ -39,7 +39,16 @@ function MovieCard({
         </Typography>
       </CardContent>
       <CardActions>
-        <Button component={RouterLink} to={`/movies/${id}`} color="secondary">
+        {/* <Button component={RouterLink} to={`/movies/${id}`} color="secondary">
+          Details
+        </Button> */}
+        <Button
+          component="a"
+          href={`https://www.themoviedb.org/movie/${id}?language=en-US`}
+          target="_blank"
+          rel="noopener noreferrer"
+          color="secondary"
+        >
           Details
         </Button>
         {enableUserActions && (
