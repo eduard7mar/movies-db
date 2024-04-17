@@ -108,7 +108,7 @@ export function MoviesFilter({ onApply }: MoviesFilterProps) {
             </>
           )}
         </FormControl>
-        <Button type="submit" sx={{ m: 2 }} variant="contained" startIcon={<FilterAltOutlinedIcon />} >
+        <Button type="submit" sx={{ m: 2 }} variant="contained" startIcon={<FilterAltOutlinedIcon />}>
           Apply filter
         </Button>
       </form>

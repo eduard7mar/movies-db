@@ -1,7 +1,6 @@
 import { Box, Button, Container, Stack, Typography } from "@mui/material";
-import { useContext } from "react";
 import { Link as RouterLink } from "react-router-dom";
-import { AuthContext, anonymousUser } from "../../AuthContext";
+import { useAuth0 } from "@auth0/auth0-react";
 
 function Copyright() {
   return (
@@ -12,8 +11,7 @@ function Copyright() {
 }
 
 export default function Home() {
-  const auth = useContext(AuthContext);
-  const loggedIn = auth.user !== anonymousUser;
+  const { isAuthenticated, user } = useAuth0();
   const greeting = "Explore movies today with us!";
 
   return (
@@ -23,7 +21,7 @@ export default function Home() {
           Welcome
         </Typography>
         <Typography variant="h5" align="center" color="text.secondary" paragraph>
-          {loggedIn ? `${auth.user.name}, ${greeting.toLowerCase()}` : greeting}
+          {isAuthenticated ? `${user?.name}, ${greeting.toLowerCase()}` : greeting}
         </Typography>
         <Stack sx={{ pt: 4 }} direction="row" spacing={2} justifyContent="center">
           <Button component={RouterLink} to="/movies" variant="contained" color="secondary">
